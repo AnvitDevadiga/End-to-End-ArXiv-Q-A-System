@@ -41,6 +41,7 @@ graph TD
     end
 
     H --> I[Display Answer & Sources to User];
+end
 
 ## Tech Stack
 

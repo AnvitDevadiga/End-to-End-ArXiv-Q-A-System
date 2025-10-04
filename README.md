@@ -12,7 +12,8 @@ Interactive UI: A simple and intuitive web interface built with Streamlit.
 
 Source Referencing: Displays the exact text chunks used by the LLM to generate the answer, allowing for easy verification.
 
-Architecture (RAG Pipeline)
+## Architecture (RAG Pipeline)
+
 The system follows a Retrieval-Augmented Generation workflow:
 
 ```mermaid

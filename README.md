@@ -20,8 +20,27 @@ The system follows a Retrieval-Augmented Generation workflow:
 4.  **Augmentation**: The user's question and the retrieved text chunks are combined into a detailed prompt.
 5.  **Generation**: The prompt is sent to a local LLM (via Ollama), which generates a final answer based *only* on the provided context.
 
-![Workflow Diagram](https://i.imgur.com/gKDbXyL.png)
-*(A text representation of this flow is in the PROJECT_PLAN.md)*
+Architecture (RAG Pipeline)
+
+The system follows a Retrieval-Augmented Generation workflow:
+
+```mermaid
+graph TD
+    subgraph "1. Ingestion"
+        A[User provides topic e.g., 'diffusion models'] --> B(Fetch & Process ArXiv Papers);
+        B --> C{ChromaDB Vector Store};
+    end
+
+    subgraph "2. Retrieval & Generation"
+        D[User asks question] --> E(Embed Question);
+        E -- Similarity Search --> C;
+        C -- Retrieve Relevant Chunks --> F((Construct Prompt));
+        D -- Original Question --> F;
+        F --> G[LLM via Ollama];
+        G --> H[Generated Answer];
+    end
+
+    H --> I[Display Answer & Sources to User];
 
 ## Tech Stack
 

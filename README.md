@@ -34,10 +34,8 @@ graph TD
         D -- Original Question --> F;
         F --> G[LLM via Ollama];
         G --> H[Generated Answer];
+        H --> I[Display Answer & Sources to User];
     end
-
-    H --> I[Display Answer & Sources to User];
-end
 
 ## Tech Stack
 

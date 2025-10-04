@@ -36,6 +36,7 @@ graph TD
         G --> H[Generated Answer];
         H --> I[Display Answer & Sources to User];
     end
+```
 
 
 ## Tech Stack

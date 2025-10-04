@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+
+# Local data and databases
+/arxiv_papers/
+/chroma_db/
+
+# Streamlit
+.streamlit/
